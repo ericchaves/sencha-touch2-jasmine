@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html manifest="" lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>GS</title>
+    <style type="text/css">
+        /**
+         * Example of an initial loading indicator.
+         * It is recommended to keep this as minimal as possible to provide instant feedback
+         * while other resources are still being loaded for the first time
+         */
+        html, body {
+            height: 100%;
+        }
+
+        #appLoadingIndicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -10px;
+            margin-left: -50px;
+            width: 100px;
+            height: 20px;
+        }
+
+        #appLoadingIndicator > * {
+            background-color: #FFFFFF;
+            float: left;
+            height: 20px;
+            margin-left: 11px;
+            width: 20px;
+            -webkit-animation-name: appLoadingIndicator;
+            -webkit-border-radius: 13px;
+            -webkit-animation-duration: 0.8s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-direction: linear;
+            opacity: 0.3
+        }
+
+        #appLoadingIndicator > :nth-child(1) {
+            -webkit-animation-delay: 0.18s;
+        }
+
+        #appLoadingIndicator > :nth-child(2) {
+            -webkit-animation-delay: 0.42s;
+        }
+
+        #appLoadingIndicator > :nth-child(3) {
+            -webkit-animation-delay: 0.54s;
+        }
+
+        @-webkit-keyframes appLoadingIndicator{
+            0% {
+                opacity: 0.3
+            }
+
+            50% {
+                opacity: 1;
+                background-color:#1985D0
+            }
+
+            100% {
+                opacity:0.3
+            }
+        }
+    </style>
+	<!-- Jasmine Test Framework -->
+	<link rel="stylesheet" href="tests/jasmine-standalone-1.1.0/lib/jasmine-1.1.0/jasmine.css" type="text/css"/>
+	<script type="text/javascript" src="tests/jasmine-standalone-1.1.0/lib/jasmine-1.1.0/jasmine.js"></script>
+    <script type="text/javascript" src="tests/jasmine-standalone-1.1.0/lib/jasmine-1.1.0/jasmine-html.js"></script>
+ 	<script type="text/javascript" src="tests/reporters/jasmine.console_reporter.js"></script>
+	<!-- Sencha Touch2 microloader -->
+    <script id="microloader" type="text/javascript" src="sdk/microloader/development.js"></script>
+	<!-- Specs -->
+	<script type="text/javascript" src="tests/spec/Sample.spec.js"></script>
+</head>
+<body>
+    <div id="appLoadingIndicator">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
