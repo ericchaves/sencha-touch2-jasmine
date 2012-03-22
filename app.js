@@ -5,13 +5,15 @@ Ext.Loader.setPath({
 //</debug>
 
 Ext.application({
+    controllers: ["Main"],
+
     name: 'GS',
 
     requires: [
         'Ext.MessageBox'
     ],
 
-    views: ['Main'],
+    views: ['Main','Home','Contact','Blog'],
 
     icon: {
         57: 'resources/icons/Icon.png',
@@ -30,9 +32,11 @@ Ext.application({
         // Initialize the main view
         Ext.Viewport.add(Ext.create('GS.view.Main'));
 
-		// Execute jasmine tests 
-		jasmine.getEnv().addReporter(new jasmine.ConsoleReporter());
-		jasmine.getEnv().execute();
+		// Execute jasmine is loaded execute tests 
+		if(jasmine){
+			jasmine.getEnv().addReporter(new jasmine.ConsoleReporter(console.log, null, true));
+			jasmine.getEnv().execute();
+		}
     },
 
     onUpdated: function() {
