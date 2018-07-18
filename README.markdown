@@ -27,6 +27,6 @@ I'd like to thank everyone that contributed to this project, but in particular a
 
 You may also want to check the following projects:
 
-* Jasmine: http://pivotal.github.com/jasmine/
+* Jasmine: https://jasmine.github.io/
 * Jasmine Species: http://rudylattae.github.com/jasmine-species/
 * Sinon.JS: http://sinonjs.org/
